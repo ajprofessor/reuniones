@@ -1,23 +1,21 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "/mnt/extra-addons/reuniones",
+    'name': "Gestión de la sala de reuniones",
 
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+    'summary': "Módulo para la gestión de las salas de reuniones de la empresa",
 
     'description': """
-        Long description of module's purpose
+En este módulo guardaremos la información de las salas y de las reuniones que se harán en ellas
     """,
 
-    'author': "My Company",
-    'website': "https://www.yourcompany.com",
+    'author': "AJ",
+    'website': "https://eldelbit.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/16.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Uncategorized',
-    'version': '0.1',
+    'version': '0.2',
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
