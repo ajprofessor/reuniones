@@ -6,6 +6,7 @@ class Reunion(models.Model):
 
     _name = 'reuniones.reunion'
     _description = 'Reuniones que se celebran en las distintas salas'
+    _rec_name = 'nombre'
 
     nombre = fields.Char(required=True)
     fechaInicio = fields.Date()
@@ -19,7 +20,7 @@ class Reunion(models.Model):
     @api.depends('asientos', 'asistentes')
     def _asientos_ocupados(self):
         for record in self:
-            if not record.asistentos:
-                record.asistentosOcupados = 0.0
+            if not record.asientos:
+                record.asientosOcupados = 0.0
             else:
-                record.asistentosOcupados = 100.0 * len(record.asistentos) / record.asistentos
+                record.asientosOcupados = 100.0 * len(record.asistentes) / record.asientos

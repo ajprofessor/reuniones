@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="sala_tree_view">
+            <field name="name">sala.tree</field>
+            <field name="model">reuniones.sala</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nombre"/>
+                    <field name="descripcion" string="Descripción"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sala_search_view">
+            <field name="name">sala.search</field>
+            <field name="model">reuniones.sala</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nombre" string="nombre"/>
+                    <field name="descripcion" string="descripción"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sala_form_view">
+            <field name="name">sala.form</field>
+            <field name="model">reuniones.sala</field>
+            <field name="arch" type="xml">
+                <form string="Formulario Sala">
+                    <sheet>
+                        <group>
+                            <field name="nombre"/>
+                            <field name="descripcion" string="Descripción"/>
+                            <field name="reuniones">
+                                <tree>
+                                    <field name="nombre"/>
+                                    <field name="fechaInicio" string="Fecha de inicio"/>
+                                    <field name="duracion"/>
+                                    <field name="asientos"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="reuniones.sala_action_window">
+            <field name="name">Listado de salas</field>
+            <field name="res_model">reuniones.sala</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+        <menuitem name="Gestión de salas" id="reuniones.sala_menu" parent="reuniones.menu_root" action="reuniones.sala_action_window"/>
+
+    </data>
+</odoo>

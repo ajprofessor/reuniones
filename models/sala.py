@@ -6,6 +6,7 @@ class Sala(models.Model):
 
     _name = 'reuniones.sala'
     _description = 'Salas disponibles para realizar reuniones'
+    _rec_name = 'nombre'
 
     nombre = fields.Char(string='Sala', required=True)
     descripcion = fields.Text()

@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="reunion_tree_view">
+            <field name="name">reunion.tree</field>
+            <field name="model">reuniones.reunion</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nombre"/>
+                    <field name="sala"/>
+                    <field name="fechaInicio" string="Fecha de inicio"/>
+                    <field name="duracion"/>
+                    <field name="asientos"/>
+                    <field name="asientosOcupados" widget="progressbar"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="reunion_form_view">
+            <field name="name">reunion.form</field>
+            <field name="model">reuniones.reunion</field>
+            <field name="arch" type="xml">
+                <form string="Formulario reunion">
+                    <sheet>
+                        <group>
+                            <field name="nombre"/>
+                            <field name="fechaInicio" string="Fecha de inicio"/>
+                            <field name="duracion"/>
+                            <field name="asientos"/>
+                            <field name="responsable" />
+                            <field name="sala"/>
+                            <field name="asistentes"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="reuniones.reunion_action_window">
+            <field name="name">Listado de reuniones</field>
+            <field name="res_model">reuniones.reunion</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Gestión Salas de Reuniones" id="reuniones.menu_root"/>
+
+        <menuitem name="Gestion de reuniones" id="reuniones.reunion_menu" parent="reuniones.menu_root" action="reuniones.reunion_action_window"/>
+
+    </data>
+</odoo>
