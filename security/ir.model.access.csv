@@ -1,3 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-reuniones.access_reuniones_reunion,access_reuniones_reunion,reuniones.model_reuniones_reunion,base.group_user,1,0,0,0
-reuniones.access_reuniones_sala,access_reuniones_sala,reuniones.model_reuniones_sala,base.group_user,1,0,0,0
+access_reuniones_reunion,reuniones_reunion,model_reuniones_reunion,base.group_user,1,1,1,1
+access_reuniones_sala,reuniones_sala,model_reuniones_sala,base.group_user,1,1,1,1
